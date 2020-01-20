@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2alpha2
+kind: Config
+metadata:
+  name: skaffold-issue
+build:
+  artifacts:
+  - image: dalvizu/skaffold-issue
+test:
+  - image: zemanlx/container-structure-test:v1.8.0-alpine
+    structureTests:
+      - './structure-tests/*'
+deploy:
+  kubeContext: docker-desktop
+  kubectl:
+    manifests:
+    - deployment.yml

@@ -1,0 +1,7 @@
+schemaVersion: 2.0.0
+
+fileExistenceTests:
+  - name: 'has index.js'
+    path: '/app/index.js'
+    shouldExist: true
+

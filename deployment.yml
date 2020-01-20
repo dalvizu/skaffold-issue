@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skaffold-issue
+  labels:
+    app: skaffold-issue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skaffold-issue
+  template:
+    metadata:
+      labels:
+        app: skaffold-issue
+    spec:
+      containers:
+      - name: ryanreynolds
+        image: dalvizu/skaffold-issue
+
